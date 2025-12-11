@@ -1,0 +1,155 @@
+@use '../config';
+@forward '../base';
+
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+.gwf-bio {
+	&__wrapper {
+		font-family: "Poppins";
+		display: flex;
+		justify-content: center;
+		padding: 20px;
+		background-color: config.$custom_2-color;
+		min-height: 100vh;
+	}
+
+	&__holder {
+		width: 800px;
+
+		@include config.breakpoint('medium-down') {
+			width: 100vw;
+		}
+	}
+
+	&__grid {
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+		padding: 25px 20px;
+	}
+
+	&__profile {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		color: #333;
+
+		&--image {
+			width: 150px;
+			height: 150px;
+			border-radius: 50%;
+			object-fit: contain;
+			border: 4px solid config.$neutral-color-light;
+			box-shadow: config.$default-shadow;
+		}
+
+		&--title {
+			font-size: 28px;
+			font-weight: 700;
+			padding-top: 10px;
+
+			@include config.breakpoint('medium-down') {
+				font-size: 30px;
+			}
+		}
+
+		&--description {
+			font-size: 16px;
+			padding-bottom: 5px;
+			text-align: center;
+
+			&-destaque {
+				font-weight: bold;
+			}
+		}
+	}
+
+	&__social {
+		display: flex;
+		justify-content: center;
+		gap: 20px;
+		padding-top: 20px;
+
+		&--link {
+			@include config.reset-link;
+		}
+
+		&--icon {
+			color: #333;
+			font-size: 24px;
+			opacity: 0.8;
+			transition: 0.3s;
+
+			&:hover {
+				opacity: 1;
+				transform: scale(1.1);
+			}
+		}
+	}
+
+	&__card {
+		text-align: center;
+		color: config.$neutral-color-lightest;
+	}
+
+	&__links {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		&--item {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: relative;
+			padding: 12px 15px;
+			text-decoration: none;
+			font-size: 18px;
+			font-weight: 400;
+			color: config.$neutral-color-lightest;
+			width: 60%;
+			background: config.$secondary-color-dark;
+			margin-bottom: 10px;
+			border-radius: 5px;
+			height: 25px;
+
+			&:hover {
+				background: config.$neutral-color-darkest;
+			}
+
+			@include config.breakpoint('medium-down') {
+				width: 90%;
+				font-size: 17px;
+				padding-left: 25px;
+			}
+
+		}
+
+		&--text {
+			display: flex;
+			flex-direction: column;
+			line-height: 10px;
+			text-align: center;
+			gap: 10px;
+		}
+
+		&--icon {
+			position: absolute;
+			left: 15px;
+			top: 50%;
+			transform: translateY(-50%);
+			font-size: 30px;
+
+			@include config.breakpoint('medium-down') {
+				left: 9px;
+			}
+		}
+
+		&--item-produtos {
+			text-decoration: none;
+		}
+	}
+}
